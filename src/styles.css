@@ -38,4 +38,7 @@ label {
   text-align: center;
 }
 
-
+.col-acoes {
+  width: 90px;
+  margin: center;
+}

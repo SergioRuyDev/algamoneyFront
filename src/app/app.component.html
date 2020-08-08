@@ -11,7 +11,7 @@
       <input pInputText type="text" class="descricao">
     </div>
 
-    <div class="ui-g-12" style="margin-top: 0.5em;">
+    <div class="ui-g-12" style="margin-top: 1em;">
       <label style="margin: 0;">Vencimento</label>
     </div>
     <div>
@@ -21,12 +21,12 @@
     </div>
 
     <div class="ui-g-12">
-      <button pButton type="submit" label="Pesquisar" style="margin-top: 0.5em;"></button>
+      <button pButton type="submit" label="Pesquisar" class="btn" style="margin-top: 1em;"></button>
     </div>
 
   </div>
 
-  <div style="margin-top: 0.5em;" class="ui-g">
+  <div style="margin-top: 1em;" class="ui-g">
     <div class="ui-g-12">
     <p-table [value]="lancamentos">
         <ng-template pTemplate="header">
@@ -36,6 +36,9 @@
                 <th class="col-data-header">Vencimento</th>
                 <th class="col-data-header">Pagamento</th>
                 <th class="col-valor-header">Valor</th>
+                <th class="col-valor-header"></th>
+
+
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-lancamento>
@@ -44,10 +47,18 @@
                 <td>{{lancamento.descricao}}</td>
                 <td class="col-data-content">{{lancamento.dataVencimento}}</td>
                 <td class="col-data-content">{{lancamento.dataPagamento}}</td>
-                <td class="col-valor-content">{{lancamento.valor}}</td>
+                <td class="col-valor-content" [ngStyle]="{ color: lancamento.tipo === 'DESPESA' ? 'red' : 'blue'}">{{lancamento.valor}}</td>
+                <td class="col-acoes">
+                  <a pButton icon="pi pi-pencil" style="margin-right: 5px;"></a>
+                  <button pButton icon="pi pi-trash" style="margin-left: 10px;"></button>
+                </td>
             </tr>
         </ng-template>
     </p-table>
     </div>
+  </div>
+
+  <div class="ui-g-12">
+    <a pButton label="Novo Lançamento" style="margin-top: 1em;"></a>
   </div>
 </div>
