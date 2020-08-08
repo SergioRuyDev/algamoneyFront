@@ -1,11 +1,28 @@
-<p-tabView>
-  <p-tabPanel header="Header 1">
-     Teste 1
-  </p-tabPanel>
-  <p-tabPanel header="Header 2" [selected]="true">
-      Teste 2
-  </p-tabPanel>
-  <p-tabPanel header="Header 3">
-      Teste 3
-  </p-tabPanel>
-</p-tabView>
+
+<div class="container">
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="ui-g-1 ui-fluid">
+      <label style="margin: 0;">Descrição</label>
+      <input pInputText type="text" class="descricao">
+    </div>
+
+    <div class="ui-g-12" style="margin-top: 0.5em;">
+      <label style="margin: 0;">Vencimento</label>
+    </div>
+    <div>
+      <input pInputText type="text" style="width: 95px">
+      <label>até</label>
+      <input pInputText type="text" style="width: 95px">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar" style="margin-top: 0.5em;"></button>
+    </div>
+
+  </div>
+</div>
